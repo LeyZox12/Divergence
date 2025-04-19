@@ -1,0 +1,19 @@
+{
+  "id": "divergence",
+  "name": "Divergence",
+  "prefix": "divergence",
+  "author": [
+    "LeyZox",
+    "Azurii"
+  ],
+  "description": "Divergence is a small content mod trying to stay as vanilla as possible.",
+  "main_file": "main.lua",
+  "priority":0,
+  "badge_colour": "ff8065",
+  "badge_text_colour":"ffffff",
+  "version": "0.0.1a",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0312b)",
+    "Lovely (>=0.7.1)"
+  ]
+}
