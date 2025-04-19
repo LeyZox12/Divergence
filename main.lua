@@ -158,11 +158,11 @@ SMODS.Consumable
   atlas = "tarots"
 }
 
---Spectre Card Concept
+--Pact Spectral Card
 SMODS.Consumable
 {
-  name = "gamble_seal",
-  key = "gamble_seal",
+  name = "pact",
+  key = "pact",
   set = "Spectral",
   pos = {x = 0, y = 1},
   config = {
@@ -182,14 +182,17 @@ SMODS.Consumable
   use = function(self)
     for _, card in ipairs(G.hand.highlighted) do
       G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
+        local seal = pseudorandom_element(G.P_SEALS, pseudoseed("divergence_seal"))
         play_sound('tarot1')
         card:juice_up(0.3, 0.5)
-        local seal = pseudorandom_element(G.P_SEALS, pseudoseed("divergence_seal"))
         card:set_seal(seal.key, nil, true)
       return true
       end}))
     end
-      G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2,func = function() G.hand:unhighlight_all(); return true end }))
+    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()
+      G.hand:unhighlight_all();
+      return true
+    end }))
   end,
 
   --Amount of cards it can be used on at once
