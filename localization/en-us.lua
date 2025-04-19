@@ -13,9 +13,12 @@ return
             }
         },
         Spectral={
-            c_divergence_gamble_seal={
-                name = "Lets go gambling",
-                text = {"Apply a random {C:attention}seal{} to up to #1# cards"}
+            c_divergence_pact={
+                name = "Pact",
+                text = {
+                    "Apply a random {C:attention}Seal{}",
+                    "to up to #1# cards"
+                }
             }
         },
         Tarot={
@@ -23,7 +26,7 @@ return
                 name="The Caver",
                 text = {
                     "Enhances up to {C:attention}3{} Cards into",
-                    "{C:attention}Ice Cards{}",
+                    "{C:attention}Ice Cards{}"
                 },
             },
         },
@@ -35,7 +38,7 @@ return
                 "{C:blue}+50{} chips",
                 "{X:chips,C:white}X#1#{} chips while this card is held in hand,", 
                 "{C:red}melts{} after {C:attention}3 hands {C:inactive}#3#/#2#{},",
-                "no rank or suit",
+                "no rank or suit"
                 },
             },
         },
