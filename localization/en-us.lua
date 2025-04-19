@@ -17,7 +17,7 @@ return
                 name = "Pact",
                 text = {
                     "Apply a random {C:attention}Seal{}",
-                    "to up to #1# cards"
+                    "to up to {C:attention}#1#{} cards"
                 }
             }
         },
