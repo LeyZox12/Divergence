@@ -164,7 +164,7 @@ SMODS.Consumable
   name = "pact",
   key = "pact",
   set = "Spectral",
-  pos = {x = 0, y = 1},
+  pos = {x = 1, y = 0},
   config = {
     extra={
       max_highlighted = 3
