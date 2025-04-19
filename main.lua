@@ -94,7 +94,7 @@ SMODS.Enhancement
   calculate = function(self, card, context)
     --Card Scoring
     local card_ability = card and card.ability or self.config
-    if context.main_scoring and context.cardarea == G.hand  then
+    if context.main_scoring then
       --In hand
       if context.cardarea == G.hand then
         return {x_chips = 1.25}
@@ -109,7 +109,7 @@ SMODS.Enhancement
       --Change Card extra.currentRounds / Shatter
       G.E_MANAGER:add_event(Event({
         trigger = 'after',
-        delay = 0.5,
+        delay = 0,
         func = function()
           card_ability.extra.currentRounds = card_ability.extra.currentRounds + 1
           card.children.center:set_sprite_pos({x = 0, y = card_ability.extra.currentRounds})
