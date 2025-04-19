@@ -4,7 +4,7 @@ DIVERGENCE.onMoney = ease_dollars
 
 ease_dollars = function(mod, instant)
     for _, v in ipairs(G.vouchers.cards) do
-      if v.config.center.key == 'v_divergence_eco' then
+      if v.config.center.key == 'v_divergence_eco' and mod > 0 then
         mod = mod +1
       end
     end
@@ -87,7 +87,7 @@ SMODS.Enhancement
   calculate = function(self, card, context)
     
     local card_ability = card and card.ability or self.config
-    if context.final_scoring_step then
+    if context.main_scoring and context.cardarea == G.hand  then
       return {x_chips = 1.25}
     end
     if context.main_scoring and context.cardarea == G.play then
@@ -178,7 +178,8 @@ SMODS.Voucher{
     extra = {
       gain = 1,
       percent = 5,
-      limitMoney = 100
+      limitMoney = 50,
+      moneyGained = 0
     }
   },
   loc_vars = function(self, info_queue, card)
@@ -194,9 +195,14 @@ SMODS.Voucher{
       if moneyGain > card_ability.extra.limitMoney then
         moneyGain = card_ability.extra.limitMoney
       end
-      ease_dollars(moneyGain)
+      card_ability.extra.moneyGained = moneyGain
     end
-
+  end,
+  calc_dollar_bonus = function(self, card)
+    local card_ability = card and card.ability or self.config
+    local gain = card_ability.extra.moneyGained
+    card_ability.extra.moneyGained = 0
+    return gain
   end,
   requires = {'v_divergence_eco'},
   discovered = true,
@@ -212,6 +218,7 @@ SMODS.Joker{
       multGain = 0.15
     }
   },
+  blueprint_compat = true,
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     info_queue[#info_queue+1] = G.P_CENTERS["m_divergence_ice"]
