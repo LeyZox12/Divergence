@@ -2,7 +2,7 @@ return
 {
     descriptions={
         Joker={
-            j_divergence_cold_joker={
+            j_divergence_frozen_joker={
                 name = "Cold Joker",
                 text = {
                     "This joker gains {X:chips, C:white}X#2#{} Chips",
@@ -34,14 +34,14 @@ return
             },
         },
         Voucher={
-            v_divergence_eco={
+            v_divergence_steady_income={
                 name = "Steady Income",
                 text = {
                 "Gives an extra {C:money}$#1#{}",
                 "each time you earn money"
                 }
             },
-            v_divergence_eco_up={
+            v_divergence_overkill={
                 name = "Overkill",
                 text = {
                     "Earn {C:money}$#1#{} for each {C:attention}#2#%{}",
