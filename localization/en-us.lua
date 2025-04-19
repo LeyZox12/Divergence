@@ -47,7 +47,7 @@ return
                     "Earn {C:money}$#1#{} for each {C:attention}#2#%{}",
                     "over the required chips",
                     "at the end of round",
-                    "{C:inactive}(capped at #3#$)"
+                    "{C:inactive}(capped at {}{C:money}#3#${}{C:inactive}){}"
                 }
             }
         }
