@@ -5,10 +5,10 @@ return
             j_divergence_frozen_joker={
                 name = "Cold Joker",
                 text = {
-                    "This joker gains {X:chips, C:white}X#2#{} Chips",
+                    "This joker gains {X:chips,C:white}X#2#{} Chips",
                     "for every {C:attention}Ice Card{}",
                     "that is destroyed",
-                    "{C:inactive}(currently{} {X:chips, C:white}X#1#{} {C:inactive}Chips){}"
+                    "{C:inactive}(currently{} {X:chips,C:white}X#1#{} {C:inactive}Chips){}"
                 }
             }
         },
