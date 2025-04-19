@@ -158,6 +158,50 @@ SMODS.Consumable
   atlas = "tarots"
 }
 
+--Spectre Card Concept
+SMODS.Consumable
+{
+  name = "gamble_seal",
+  key = "gamble_seal",
+  set = "Spectral",
+  pos = {x = 0, y = 1},
+  config = {
+    extra={
+      max_highlighted = 3
+      }
+    },
+  loc_vars = function(self, info_queue, card)
+  info_queue[#info_queue+1] = G.P_CENTERS[self.config.mod_conv]
+        
+  local card_ability = card and card.ability or self.config
+  return {
+      vars = {card_ability.extra.max_highlighted}
+  }
+  end,
+
+  use = function(self)
+    for _, card in ipairs(G.hand.highlighted) do
+      G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
+        play_sound('tarot1')
+        card:juice_up(0.3, 0.5)
+        local seal = pseudorandom_element(G.P_SEALS, pseudoseed("divergence_seal"))
+        card:set_seal(seal.key, nil, true)
+      return true
+      end}))
+    end
+      G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2,func = function() G.hand:unhighlight_all(); return true end }))
+  end,
+
+  --Amount of cards it can be used on at once
+  can_use = function(self, card)
+    local card_ability = card and card.ability or self.config
+    return 0 < #G.hand.highlighted and #G.hand.highlighted <= card_ability.extra.max_highlighted
+  end,
+    
+  discovered = true,
+  atlas = "tarots"
+}
+
 --Steady Income Voucher
 SMODS.Voucher{
   name = "steady_income",

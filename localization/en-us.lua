@@ -12,6 +12,12 @@ return
                 }
             }
         },
+        Spectral={
+            c_divergence_gamble_seal={
+                name = "Lets go gambling",
+                text = {"Apply a random {C:attention}seal{} to up to #1# cards"}
+            }
+        },
         Tarot={
             c_divergence_caver={
                 name="The Caver",
