@@ -3,7 +3,7 @@ return
     descriptions={
         Joker={
             j_divergence_frozen_joker={
-                name = "Cold Joker",
+                name = "Frozen Joker",
                 text = {
                     "This joker gains {X:chips,C:white}X#2#{} Chips",
                     "for every {C:attention}Ice Card{}",
