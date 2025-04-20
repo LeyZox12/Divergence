@@ -16,8 +16,8 @@ return
             divergence_stagestruck={
                 name = "Stagestruck",
                 text = {
-                    "Can be found again, ({C:inactive}as if{}",
-                    "{C:attention}Showman{} {C:inactive}was here{}"
+                    "Can be found again, {C:inactive}(as if{}",
+                    "{C:attention}Showman{} {C:inactive}was present){}"
                 }
             }
         },
