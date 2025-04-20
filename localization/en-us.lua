@@ -17,7 +17,7 @@ return
                 name = "Stagestruck",
                 text = {
                     "Can be found again, {C:inactive}(as if{}",
-                    "{C:attention}Showman{} {C:inactive}was present){}"
+                    "{C:attention}Showman{} {C:inactive}were present){}"
                 }
             }
         },
