@@ -226,6 +226,7 @@ SMODS.Consumable
       }
     },
   loc_vars = function(self, info_queue, card)
+  info_queue[#info_queue+1] = {set = "Other", key = "divergence_stagestruck", specific_vars = {}}
   local card_ability = card and card.ability or self.config
   return {
       vars = {card_ability.extra.max_highlighted}
