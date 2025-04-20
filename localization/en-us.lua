@@ -14,7 +14,7 @@ return
         },
         Other={
             divergence_stagetruck={
-                name = "Stagestruck",
+                name = "Stage-Struck",
                 text = {
                     "Can be found again, {C:inactive}(as if{}",
                     "{C:attention}Showman{} {C:inactive}were present){}"
@@ -32,7 +32,7 @@ return
             c_divergence_echo={
                 name = "Echo",
                 text = {
-                    "Apply a {C:attention}Stagestruck Sticker{}",
+                    "Apply a {C:attention}Stage-Struck Sticker{}",
                     "to up to {C:attention}#1#{} Joker"
                 }
             }
@@ -78,13 +78,13 @@ return
                 name = "Backstage Pass",
                 text = {
                     "{C:attention}Jokers{} may appear",
-                    "with {C:attention}Stagestruck{}"
+                    "with {C:attention}Stage-Struck{}"
                 }
             },
             v_divergence_standing_ovation={
                 name = "Standing Ovation",
                 text = {
-                    "{C:attention}Jokers{} with {C:attention}Stagestruck{}",
+                    "{C:attention}Jokers{} with {C:attention}Stage-Struck{}",
                     "appear {C:attention}X#1#{} more often"
                 }
             }
@@ -92,7 +92,7 @@ return
     },
     misc={
         labels={
-            divergence_Stagestruck = "Stagestruck"
+            divergence_stagestruck = "Stage-Struck"
         }
     },
 }
