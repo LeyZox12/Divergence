@@ -213,11 +213,11 @@ SMODS.Consumable
   atlas = "tarots"
 }
 
---Showman Sticker Spectral Card
+--Echo Spectral Card
 SMODS.Consumable
 {
-  name = "make_showman_joker",
-  key = "make_showman_joker",
+  name = "echo",
+  key = "echo",
   set = "Spectral",
   pos = {x = 2, y = 0},
   config = {
@@ -414,12 +414,12 @@ SMODS.Joker{
   atlas = "jokers"
 }
 
---Showman Sticker
+--Stagestruck Sticker
 SMODS.Sticker
 {
   name = "stagestruck",
   key = "stagestruck",
-  badge_colour = HEX("fd5f55"),
+  badge_colour = HEX("cb2b42"),
   pos = {x = 0, y = 0},
   sets = {
     Joker = true
