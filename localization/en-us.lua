@@ -16,8 +16,8 @@ return
                 divergence_stagestruck={
                     name = "Stagestruck",
                     text = {
-                        "If a {C:attention}Joker{} has this sticker,",
-                        "it can be found again"
+                        "Can be found again, ({C:inactive}as if{}",
+                        "{C:attention}Showman{} {C:inactive}was here{}"
                     }
                 }
         },
