@@ -337,7 +337,7 @@ SMODS.Voucher{
   pos = {x = 1, y = 0},
   config = {
     extra = {
-      percentIncrease = 5 --dummy value, we need to balance that
+      percentIncrease = 5 --Dummy value, we need to balance that
     }
   },
   loc_vars = function(self, info_queue, card)
@@ -363,7 +363,7 @@ SMODS.Voucher{
   pos = {x = 1, y = 1},
   config = {
     extra = {
-      percentIncrease = 10 --dummy value, we need to balance that
+      percentIncrease = 10 --Dummy value, we need to balance that
     }
   },
   loc_vars = function(self, info_queue, card)
@@ -425,13 +425,13 @@ SMODS.Sticker
   sets = {
     Joker = true
   },
-  rate = 0.0, --we dont want them to spawn naturally for now
+  rate = 0.0, --We dont want them to spawn naturally for now
   needs_enable_flag = false,
     
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     return{
-      vars = {} --dont delete, if you do the name wont show up
+      vars = {} --Dont delete, if you do the name wont show up
     }
   end,
     
