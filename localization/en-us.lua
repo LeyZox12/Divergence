@@ -11,11 +11,11 @@ return
                     "{C:inactive}(currently{} {X:chips,C:white}X#1#{} {C:inactive}Chips){}"
                 }
             },
-            j_divergence_collector={
-                name = "The collector",
+            j_divergence_collector_joker={
+                name = "Collector Joker",
                 text = {
-                    "{X:mult,C:white}X1{} mult for every joker with the same {C:attention}edition{}",
-                    "{C:inactive}(currently{} {X:mult,C:white}X#1#{} {C:inactive}){}"
+                    "{X:mult,C:white}X#1#{} mult for every joker with the same {C:attention}edition{}",
+                    "{C:inactive}(currently{} {X:mult,C:white}X#2#{}{C:inactive}){}"
                 }
             }
         },
