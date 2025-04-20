@@ -418,13 +418,13 @@ SMODS.Joker{
 
 --Collector Joker
 SMODS.Joker{
-  name = "collector",
-  key = "collector",
+  name = "collector_joker",
+  key = "collector_joker",
   pos = {x = 1, y = 0},
   config = {
     extra = {
-      currMult = 1.0,
-      multGain = 1.0
+      multGain = 1.0,
+      currMult = 1.0
     }
   },
   rarity = 3,
@@ -461,14 +461,14 @@ SMODS.Joker{
         m = m + v[2] - 1
         end
       end
-      card_ability.extra.currMult = m
+      card_ability.extra.currMult = m * card_ability.extra.multGain
     end
   end,
     
   calculate = function(self, card, context)
     local card_ability = card and card.ability or self.config
     if context.joker_main then
-      return {x_chips = card_ability.extra.currMult}
+      return {x_mult = card_ability.extra.currMult}
     end
   end,
     
