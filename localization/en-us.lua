@@ -13,7 +13,7 @@ return
             }
         },
         Other={
-            divergence_stagetruck={
+            divergence_stagestruck={
                 name = "Stage-Struck",
                 text = {
                     "Can be found again, {C:inactive}(as if{}",
