@@ -10,6 +10,7 @@ The mod currently adds:
 - 1 Enhancement
 - 4 Vouchers
 - 1 Joker
+- 1 Sticker
 
 # Requirements
 - [Steamodded](https://github.com/Steamopollys/Steamodded)
