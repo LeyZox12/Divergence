@@ -13,10 +13,10 @@ return
             }
         },
         Other={
-                divergence_copy={
-                    name = "Showman Sticker",
+                divergence_stagestruck={
+                    name = "Stagestruck",
                     text = {
-                        "If a joker has this sticker,",
+                        "If a {C:attention}Joker{} has this sticker,",
                         "it can be found again"
                     }
                 }
@@ -29,11 +29,11 @@ return
                     "to up to {C:attention}#1#{} cards"
                 }
             },
-            c_divergence_make_showman_joker={
-                name = "I cast showman sticker",
+            c_divergence_echo={
+                name = "Echo",
                 text = {
-                    "Apply a {C:attention}showman sticker{}",
-                    "to up to {C:attention}#1#{} Joker(s)"
+                    "Apply a {C:attention}Stagestruck Sticker{}",
+                    "to up to {C:attention}#1#{} Joker"
                 }
             }
         },
@@ -95,7 +95,7 @@ return
     },
     misc={
         labels={
-            divergence_copy = "showman sticker"
+            divergence_stagestruck = "Stagestruck"
             }
     },
 }
