@@ -6,9 +6,9 @@ Divergence is a small content mod trying to stay as vanilla as possible.
 # Content
 
 The mod currently adds:
-- 2 Consumables
+- 3 Consumable
 - 1 Enhancement
-- 2 Vouchers
+- 4 Vouchers
 - 1 Joker
 
 # Requirements

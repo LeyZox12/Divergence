@@ -12,12 +12,28 @@ return
                 }
             }
         },
+        Other={
+                divergence_copy={
+                    name = "Showman Sticker",
+                    text = {
+                        "If a joker has this sticker,",
+                        "it can be found again"
+                    }
+                }
+        },
         Spectral={
             c_divergence_pact={
                 name = "Pact",
                 text = {
                     "Apply a random {C:attention}Seal{}",
                     "to up to {C:attention}#1#{} cards"
+                }
+            },
+            c_divergence_make_showman_joker={
+                name = "I cast showman sticker",
+                text = {
+                    "Apply a {C:attention}showman sticker{}",
+                    "to up to {C:attention}#1#{} Joker(s)"
                 }
             }
         },
@@ -58,7 +74,28 @@ return
                     "at the end of round",
                     "{C:inactive}(capped at {}{C:money}#3#${}{C:inactive}){}"
                 }
+            },
+            v_divergence_showman_voucher={
+                name = "Showman Voucher",
+                text = {
+                    "Increase the probability of finding",
+                    "{C:attention}Showman Stickers{} on jokers",
+                    "by {C:attention}#1#%{}"
+                }
+            },
+            v_divergence_showman_voucher_up={
+                name = "Showman Voucher Premium",
+                text = {
+                    "Increase the probability of finding",
+                    "{C:attention}Showman Stickers{} on jokers",
+                    "by {C:attention}#1#%{}"
+                }
             }
         }
+    },
+    misc={
+        labels={
+            divergence_copy = "showman sticker"
+            }
     },
 }

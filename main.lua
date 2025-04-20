@@ -32,6 +32,13 @@ SMODS.Atlas{
 }
 
 SMODS.Atlas{
+  key = "stickers",
+  path = "Stickers.png",
+  px = 71,
+  py = 95
+}
+
+SMODS.Atlas{
   key = "jokers",
   path = "Jokers.png",
   px = 71,
@@ -158,6 +165,7 @@ SMODS.Consumable
   atlas = "tarots"
 }
 
+
 --Pact Spectral Card
 SMODS.Consumable
 {
@@ -199,6 +207,49 @@ SMODS.Consumable
   can_use = function(self, card)
     local card_ability = card and card.ability or self.config
     return 0 < #G.hand.highlighted and #G.hand.highlighted <= card_ability.extra.max_highlighted
+  end,
+    
+  discovered = true,
+  atlas = "tarots"
+}
+
+--Apply Showman Sticker Spectral card
+SMODS.Consumable
+{
+  name = "make_showman_joker",
+  key = "make_showman_joker",
+  set = "Spectral",
+  pos = {x = 2, y = 0},
+  config = {
+    extra={
+      max_highlighted = 1
+      }
+    },
+  loc_vars = function(self, info_queue, card)
+  local card_ability = card and card.ability or self.config
+  return {
+      vars = {card_ability.extra.max_highlighted}
+  }
+  end,
+  use = function(self)
+    for _, card in ipairs(G.jokers.highlighted) do
+      G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
+        play_sound('tarot1')
+        card:juice_up(0.3, 0.5)
+        SMODS.Stickers.divergence_copy:apply(card, true)
+      return true
+      end}))
+    end
+    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.2, func = function()
+      G.jokers:unhighlight_all();
+      return true
+    end }))
+  end,
+
+  --Amount of jokers it can be used on at once
+  can_use = function(self, card)
+    local card_ability = card and card.ability or self.config
+    return 0 < #G.jokers.highlighted and #G.jokers.highlighted <= card_ability.extra.max_highlighted
   end,
     
   discovered = true,
@@ -278,16 +329,69 @@ SMODS.Voucher{
   atlas = "vouchers"
 }
 
+SMODS.Voucher{
+  name = "showman_voucher",
+  key = "showman_voucher",
+  pos = {x = 1, y = 0},
+  config = {
+    extra = {
+      percentIncrease = 5 --dummy value, we need to balance that
+    }
+  },
+  loc_vars = function(self, info_queue, card)
+    local card_ability = card and card.ability or self.config
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_copy", specific_vars = {}}
+    return {
+        vars = {card_ability.extra.percentIncrease}
+    }
+  end,
+  redeem = function(self, card)
+    local card_ability = card and card.ability or self.config
+    SMODS.Stickers.divergence_copy.rate =SMODS.Stickers.divergence_copy.rate + card_ability.extra.percentIncrease / 100
+  end,
+
+  discovered = true,
+  atlas = "vouchers"
+}
+
+SMODS.Voucher{
+  name = "showman_voucher_up",
+  key = "showman_voucher_up",
+  pos = {x = 1, y = 1},
+  config = {
+    extra = {
+      percentIncrease = 10 --dummy value, we need to balance that
+    }
+  },
+  loc_vars = function(self, info_queue, card)
+    local card_ability = card and card.ability or self.config
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_copy", specific_vars = {}}
+    return {
+        vars = {card_ability.extra.percentIncrease}
+    }
+  end,
+  redeem = function(self, card)
+    local card_ability = card and card.ability or self.config
+    SMODS.Stickers.divergence_copy.rate =SMODS.Stickers.divergence_copy.rate + card_ability.extra.percentIncrease / 100
+  end,
+
+  requires = {"v_divergence_showman_voucher"},
+  discovered = true,
+  atlas = "vouchers"
+}
+
 --Frozen Joker
 SMODS.Joker{
   name = "frozen_joker",
   key = "frozen_joker",
+  pos = {x = 0, y = 0},
   config = {
     extra = {
       currMult = 1.0,
       multGain = 0.15
     }
   },
+  rarity = 2,
   blueprint_compat = true,
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
@@ -307,3 +411,29 @@ SMODS.Joker{
   discovered = true,
   atlas = "jokers"
 }
+
+SMODS.Sticker
+{
+  name = "copy",
+  key = "copy",
+  badge_colour = HEX("58bf24"),
+  pos = {x = 0, y = 0},
+  sets = {
+    Joker = true
+  },
+  rate = 0.0, --we dont want them to spawn naturally for now
+  needs_enable_flag = false,
+  loc_vars = function(self, info_queue, card)
+    local card_ability = card and card.ability or self.config
+    return{
+      vars = {} --dont delete, if you do the name wont show up™
+    }
+  end,
+  calculate = function (self, card, context)
+    if G.GAME ~= nil then--G.GAME is undefined in certain context when calculate is called
+      G.GAME.used_jokers[card.config.center_key] = nil --removes the joker from the jokers used, putting it back into the pool
+    end
+  end,
+  atlas = "stickers"
+}
+
