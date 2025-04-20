@@ -14,8 +14,8 @@ return
             j_divergence_collector_joker={
                 name = "Collector Joker",
                 text = {
-                    "{X:mult,C:white}X#1#{} mult for every joker",
-                    "with the same {C:attention}edition{} {C:inactive}(exept{} {C:dark_edition}negative{}{C:inactive}){}",
+                    "{X:mult,C:white}X#1#{} mult for every joker with",
+                    "the same {C:attention}edition{} {C:inactive}(exept{} {C:dark_edition}negative{}{C:inactive}){}",
                     "{C:inactive}(currently{} {X:mult,C:white}X#2#{}{C:inactive}){}"
                 }
             }
