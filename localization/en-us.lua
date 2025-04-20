@@ -13,13 +13,13 @@ return
             }
         },
         Other={
-                divergence_stagestruck={
-                    name = "Stagestruck",
-                    text = {
-                        "Can be found again, ({C:inactive}as if{}",
-                        "{C:attention}Showman{} {C:inactive}was here{}"
-                    }
+            divergence_stagestruck={
+                name = "Stagestruck",
+                text = {
+                    "Can be found again, ({C:inactive}as if{}",
+                    "{C:attention}Showman{} {C:inactive}was here{}"
                 }
+            }
         },
         Spectral={
             c_divergence_pact={
@@ -46,8 +46,7 @@ return
                 },
             },
         },
-        Enhanced=
-        {
+        Enhanced={
             m_divergence_ice={
                 name = "Ice Card",
                 text = {
@@ -55,8 +54,8 @@ return
                 "{X:chips,C:white}X#1#{} chips while this card is held in hand,", 
                 "{C:red}melts{} after {C:attention}3 hands {C:inactive}#3#/#2#{},",
                 "no rank or suit"
-                },
-            },
+                }
+            }
         },
         Voucher={
             v_divergence_steady_income={
@@ -96,6 +95,6 @@ return
     misc={
         labels={
             divergence_stagestruck = "Stagestruck"
-            }
+        }
     },
 }
