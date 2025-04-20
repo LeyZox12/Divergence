@@ -415,6 +415,64 @@ SMODS.Joker{
   atlas = "jokers"
 }
 
+
+--collector Joker
+SMODS.Joker{
+  name = "collector",
+  key = "collector",
+  pos = {x = 1, y = 0},
+  config = {
+    extra = {
+      currMult = 1.0,
+      multGain = 1.0
+    }
+  },
+  rarity = 3,
+  blueprint_compat = true,
+  loc_vars = function(self, info_queue, card)
+    local card_ability = card and card.ability or self.config
+    return{
+      vars = {card_ability.extra.currMult, card_ability.extra.multGain}
+    }
+  end,
+  update = function(self, card)
+    local card_ability = card and card.ability or self.config
+    if G.jokers ~= nil then
+      local editions = {}
+      for _, j in ipairs(G.jokers.cards) do
+        local added = false
+        if(j.edition ~= nil) then
+          for i, e in ipairs(editions) do
+            if(e[1] == j.edition.key) then
+              editions[i][2] = editions[i][2] + 1
+              added = true
+            end
+          end
+          if not added then
+            table.insert(editions, {j.edition.key, 1})
+          end
+        end
+      end
+      m = 1
+      for i, v in ipairs(editions) do
+        if v[1] ~= "e_negative" then
+        m = m + v[2] - 1
+        end
+      end
+      card_ability.extra.currMult = m
+    end
+  end,
+  calculate = function(self, card, context)
+    local card_ability = card and card.ability or self.config
+    if context.joker_main then
+      return {x_chips = card_ability.extra.currMult}
+    end
+  end,
+    
+  discovered = true,
+  atlas = "jokers"
+}
+
 --Stagestruck Sticker
 SMODS.Sticker
 {

@@ -10,6 +10,13 @@ return
                     "that is destroyed",
                     "{C:inactive}(currently{} {X:chips,C:white}X#1#{} {C:inactive}Chips){}"
                 }
+            },
+            j_divergence_collector={
+                name = "The collector",
+                text = {
+                    "{X:mult,C:white}X1{} mult for every joker with the same {C:attention}edition{}",
+                    "{C:inactive}(currently{} {X:mult,C:white}X#1#{} {C:inactive}){}"
+                }
             }
         },
         Other={

@@ -9,7 +9,7 @@ The mod currently adds:
 - 3 Consumables
 - 1 Enhancement
 - 4 Vouchers
-- 1 Joker
+- 2 Jokers
 - 1 Sticker
 
 # Requirements
