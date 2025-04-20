@@ -213,7 +213,7 @@ SMODS.Consumable
   atlas = "tarots"
 }
 
---Apply Showman Sticker Spectral card
+--Showman Sticker Spectral Card
 SMODS.Consumable
 {
   name = "make_showman_joker",
@@ -236,7 +236,7 @@ SMODS.Consumable
       G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
         play_sound('tarot1')
         card:juice_up(0.3, 0.5)
-        SMODS.Stickers.divergence_copy:apply(card, true)
+        SMODS.Stickers.divergence_showman_sticker:apply(card, true)
       return true
       end}))
     end
@@ -329,6 +329,7 @@ SMODS.Voucher{
   atlas = "vouchers"
 }
 
+--Showman Voucher
 SMODS.Voucher{
   name = "showman_voucher",
   key = "showman_voucher",
@@ -340,20 +341,21 @@ SMODS.Voucher{
   },
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
-    info_queue[#info_queue+1] = {set = "Other", key = "divergence_copy", specific_vars = {}}
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_showman_sticker", specific_vars = {}}
     return {
         vars = {card_ability.extra.percentIncrease}
     }
   end,
   redeem = function(self, card)
     local card_ability = card and card.ability or self.config
-    SMODS.Stickers.divergence_copy.rate =SMODS.Stickers.divergence_copy.rate + card_ability.extra.percentIncrease / 100
+    SMODS.Stickers.divergence_showman_sticker.rate =SMODS.Stickers.divergence_showman_sticker.rate + card_ability.extra.percentIncrease / 100
   end,
 
   discovered = true,
   atlas = "vouchers"
 }
 
+--Showman_up Voucher
 SMODS.Voucher{
   name = "showman_voucher_up",
   key = "showman_voucher_up",
@@ -365,14 +367,14 @@ SMODS.Voucher{
   },
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
-    info_queue[#info_queue+1] = {set = "Other", key = "divergence_copy", specific_vars = {}}
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_showman_sticker", specific_vars = {}}
     return {
         vars = {card_ability.extra.percentIncrease}
     }
   end,
   redeem = function(self, card)
     local card_ability = card and card.ability or self.config
-    SMODS.Stickers.divergence_copy.rate =SMODS.Stickers.divergence_copy.rate + card_ability.extra.percentIncrease / 100
+    SMODS.Stickers.divergence_showman_sticker.rate =SMODS.Stickers.divergence_showman_sticker.rate + card_ability.extra.percentIncrease / 100
   end,
 
   requires = {"v_divergence_showman_voucher"},
@@ -412,23 +414,26 @@ SMODS.Joker{
   atlas = "jokers"
 }
 
+--Showman Sticker
 SMODS.Sticker
 {
-  name = "copy",
-  key = "copy",
-  badge_colour = HEX("58bf24"),
+  name = "showman_sticker",
+  key = "showman_sticker",
+  badge_colour = HEX("fd5f55"),
   pos = {x = 0, y = 0},
   sets = {
     Joker = true
   },
   rate = 0.0, --we dont want them to spawn naturally for now
   needs_enable_flag = false,
+    
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     return{
       vars = {} --dont delete, if you do the name wont show up™
     }
   end,
+    
   calculate = function (self, card, context)
     if G.GAME ~= nil then--G.GAME is undefined in certain context when calculate is called
       G.GAME.used_jokers[card.config.center_key] = nil --removes the joker from the jokers used, putting it back into the pool
@@ -436,4 +441,3 @@ SMODS.Sticker
   end,
   atlas = "stickers"
 }
-
