@@ -332,8 +332,8 @@ SMODS.Voucher{
 
 --Showman Voucher
 SMODS.Voucher{
-  name = "showman_voucher",
-  key = "showman_voucher",
+  name = "backstage_pass",
+  key = "backstage_pass",
   pos = {x = 1, y = 0},
   config = {
     extra = {
@@ -358,8 +358,8 @@ SMODS.Voucher{
 
 --Showman_up Voucher
 SMODS.Voucher{
-  name = "showman_voucher_up",
-  key = "showman_voucher_up",
+  name = "standing_ovation",
+  key = "standing_ovation",
   pos = {x = 1, y = 1},
   config = {
     extra = {
@@ -378,7 +378,7 @@ SMODS.Voucher{
     SMODS.Stickers.divergence_stagestruck.rate =SMODS.Stickers.divergence_stagestruck.rate + card_ability.extra.percentIncrease / 100
   end,
 
-  requires = {"v_divergence_showman_voucher"},
+  requires = {"v_divergence_backstage_pass"},
   discovered = true,
   atlas = "vouchers"
 }
