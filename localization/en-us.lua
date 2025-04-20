@@ -74,20 +74,18 @@ return
                     "{C:inactive}(capped at {}{C:money}#3#${}{C:inactive}){}"
                 }
             },
-            v_divergence_showman_voucher={
-                name = "Showman Voucher",
+            v_divergence_backstage_pass={
+                name = "Backstage Pass",
                 text = {
-                    "Increase the probability of finding",
-                    "{C:attention}Showman Stickers{} on jokers",
-                    "by {C:attention}#1#%{}"
+                    "{C:attention}Jokers{} may appear",
+                    "with {C:attention}Stagestruck{}"
                 }
             },
-            v_divergence_showman_voucher_up={
-                name = "Showman Voucher Premium",
+            v_divergence_standing_ovation={
+                name = "Standing Ovation",
                 text = {
-                    "Increase the probability of finding",
-                    "{C:attention}Showman Stickers{} on jokers",
-                    "by {C:attention}#1#%{}"
+                    "{C:attention}Jokers{} with {C:attention}Stagestruck{}",
+                    "appear {C:attention}X#1#{} more often"
                 }
             }
         }
