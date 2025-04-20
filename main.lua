@@ -330,7 +330,7 @@ SMODS.Voucher{
   atlas = "vouchers"
 }
 
---Showman Voucher
+--Backstage Pass Voucher
 SMODS.Voucher{
   name = "backstage_pass",
   key = "backstage_pass",
@@ -356,26 +356,26 @@ SMODS.Voucher{
   atlas = "vouchers"
 }
 
---Showman_up Voucher
+--Standing Ovation Voucher
 SMODS.Voucher{
   name = "standing_ovation",
   key = "standing_ovation",
   pos = {x = 1, y = 1},
   config = {
     extra = {
-      percentIncrease = 10 --Dummy value, we need to balance that
+      timesIncrease = 2 --NOT A DUMMY VALUE!!!
     }
   },
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     info_queue[#info_queue+1] = {set = "Other", key = "divergence_stagestruck", specific_vars = {}}
     return {
-        vars = {card_ability.extra.percentIncrease}
+        vars = {card_ability.extra.timesIncrease}
     }
   end,
   redeem = function(self, card)
     local card_ability = card and card.ability or self.config
-    SMODS.Stickers.divergence_stagestruck.rate =SMODS.Stickers.divergence_stagestruck.rate + card_ability.extra.percentIncrease / 100
+    SMODS.Stickers.divergence_stagestruck.rate = SMODS.Stickers.divergence_stagestruck.rate * card_ability.extra.timesIncrease
   end,
 
   requires = {"v_divergence_backstage_pass"},
@@ -416,7 +416,7 @@ SMODS.Joker{
 }
 
 
---collector Joker
+--Collector Joker
 SMODS.Joker{
   name = "collector",
   key = "collector",
@@ -429,12 +429,14 @@ SMODS.Joker{
   },
   rarity = 3,
   blueprint_compat = true,
+    
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     return{
       vars = {card_ability.extra.currMult, card_ability.extra.multGain}
     }
   end,
+    
   update = function(self, card)
     local card_ability = card and card.ability or self.config
     if G.jokers ~= nil then
@@ -452,7 +454,7 @@ SMODS.Joker{
             table.insert(editions, {j.edition.key, 1})
           end
         end
-      end
+      end    
       m = 1
       for i, v in ipairs(editions) do
         if v[1] ~= "e_negative" then
@@ -462,6 +464,7 @@ SMODS.Joker{
       card_ability.extra.currMult = m
     end
   end,
+    
   calculate = function(self, card, context)
     local card_ability = card and card.ability or self.config
     if context.joker_main then
@@ -473,7 +476,7 @@ SMODS.Joker{
   atlas = "jokers"
 }
 
---Stagestruck Sticker
+--Stage-Struck Sticker
 SMODS.Sticker
 {
   name = "stagestruck",
