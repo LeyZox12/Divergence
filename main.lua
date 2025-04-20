@@ -236,7 +236,7 @@ SMODS.Consumable
       G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function()
         play_sound('tarot1')
         card:juice_up(0.3, 0.5)
-        SMODS.Stickers.divergence_showman_sticker:apply(card, true)
+        SMODS.Stickers.divergence_stagestruck:apply(card, true)
       return true
       end}))
     end
@@ -341,14 +341,14 @@ SMODS.Voucher{
   },
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
-    info_queue[#info_queue+1] = {set = "Other", key = "divergence_showman_sticker", specific_vars = {}}
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_stagestruck", specific_vars = {}}
     return {
         vars = {card_ability.extra.percentIncrease}
     }
   end,
   redeem = function(self, card)
     local card_ability = card and card.ability or self.config
-    SMODS.Stickers.divergence_showman_sticker.rate =SMODS.Stickers.divergence_showman_sticker.rate + card_ability.extra.percentIncrease / 100
+    SMODS.Stickers.divergence_stagestruck.rate =SMODS.Stickers.divergence_stagestruck.rate + card_ability.extra.percentIncrease / 100
   end,
 
   discovered = true,
@@ -367,14 +367,14 @@ SMODS.Voucher{
   },
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
-    info_queue[#info_queue+1] = {set = "Other", key = "divergence_showman_sticker", specific_vars = {}}
+    info_queue[#info_queue+1] = {set = "Other", key = "divergence_stagestruck", specific_vars = {}}
     return {
         vars = {card_ability.extra.percentIncrease}
     }
   end,
   redeem = function(self, card)
     local card_ability = card and card.ability or self.config
-    SMODS.Stickers.divergence_showman_sticker.rate =SMODS.Stickers.divergence_showman_sticker.rate + card_ability.extra.percentIncrease / 100
+    SMODS.Stickers.divergence_stagestruck.rate =SMODS.Stickers.divergence_stagestruck.rate + card_ability.extra.percentIncrease / 100
   end,
 
   requires = {"v_divergence_showman_voucher"},
@@ -417,8 +417,8 @@ SMODS.Joker{
 --Showman Sticker
 SMODS.Sticker
 {
-  name = "showman_sticker",
-  key = "showman_sticker",
+  name = "stagestruck",
+  key = "stagestruck",
   badge_colour = HEX("fd5f55"),
   pos = {x = 0, y = 0},
   sets = {
@@ -430,7 +430,7 @@ SMODS.Sticker
   loc_vars = function(self, info_queue, card)
     local card_ability = card and card.ability or self.config
     return{
-      vars = {} --dont delete, if you do the name wont show up™
+      vars = {} --dont delete, if you do the name wont show up
     }
   end,
     
