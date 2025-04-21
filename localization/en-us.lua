@@ -33,15 +33,15 @@ return
             c_divergence_pact={
                 name = "Pact",
                 text = {
-                    "Apply a random {C:attention}Seal{}",
-                    "to up to {C:attention}#1#{} cards"
+                    "Applies a random {C:attention}Seal{}",
+                    "to up to {C:attention}#1#{} selected cards"
                 }
             },
             c_divergence_echo={
                 name = "Echo",
                 text = {
-                    "Apply a {C:attention}Stage-Struck Sticker{}",
-                    "to up to {C:attention}#1#{} Joker"
+                    "Applies a {C:attention}Stage-Struck Sticker{}",
+                    "to up to {C:attention}#1#{} selected Joker"
                 }
             }
         },
