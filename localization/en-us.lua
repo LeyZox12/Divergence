@@ -49,8 +49,8 @@ return
             c_divergence_caver={
                 name = "The Caver",
                 text = {
-                    "Enhances up to {C:attention}3{} selected cards",
-                    "into {C:attention}Ice Cards{}"
+                    "Enhances up to {C:attention}3{} selected",
+                    "cards into {C:attention}Ice Cards{}"
                 },
             },
         },
