@@ -220,6 +220,7 @@ SMODS.Consumable
   key = "echo",
   set = "Spectral",
   pos = {x = 2, y = 0},
+  soul_pos = {x = 3, y = 0},
   config = {
     extra={
       max_highlighted = 1
