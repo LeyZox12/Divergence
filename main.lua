@@ -142,6 +142,7 @@ SMODS.Consumable
   set = "Tarot",
   effect = 'Enhance',
   pos = {x = 0, y = 0},
+  cost = 3,
   config = {
       mod_conv = "m_divergence_ice",
       max_highlighted = 3
@@ -173,6 +174,7 @@ SMODS.Consumable
   key = "pact",
   set = "Spectral",
   pos = {x = 1, y = 0},
+  cost = 4,
   config = {
     extra={
       max_highlighted = 3
@@ -221,6 +223,7 @@ SMODS.Consumable
   set = "Spectral",
   pos = {x = 2, y = 0},
   soul_pos = {x = 3, y = 0},
+  cost = 4,
   config = {
     extra={
       max_highlighted = 1
